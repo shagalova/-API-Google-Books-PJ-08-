@@ -1,0 +1,368 @@
+@import "../base/vars";
+
+.bookshop {
+    display: grid;
+    grid-template-columns: 160px 196px 60px 1fr 160px;
+    grid-template-rows: 46px 1fr 1fr 120px;
+    margin-bottom: 75px;
+}
+
+.bg {
+    display: grid;
+    grid-template-columns: 160px 196px 60px;
+    grid-template-rows: 46px 1fr 60px;
+    grid-column: 1/4;
+    grid-row: 1/3;
+    background-color: #EFEEF6;
+}
+.category {
+    grid-column: 2/3;
+    grid-row: 2/auto;
+}
+.category__item {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    padding-bottom: 2em;
+    color: $passive-color;
+    cursor: pointer;
+}
+
+
+.activeItem {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.5px;
+    color: $active-color;
+    position: relative;
+}
+
+.activeItem::before {
+    content: url(../img/icons/Ellipse.svg);
+    position: absolute;
+    left: -14px;
+    top: -3px;
+   
+}
+
+.output {
+    
+    grid-column: 3/5;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 424px);
+    grid-template-rows: repeat(auto-fill, 300px);
+    column-gap: 76px;
+    row-gap: 96px;
+}
+.output__card {
+    display: flex;
+}
+
+
+.card__cover {
+    flex: 0 0 50%;
+}
+.card__cover img {
+    width: 212px;
+    height: 300px;
+    box-shadow: 0px 24px 36px 0px #35315447;
+
+}
+.card__text {
+    flex: 0 0 50%;
+    padding-left: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card__text-author {
+    font-family: 'Open Sans';
+    font-size: 10px;
+    line-height: 13.62px;
+    color: $passive-color;
+
+}
+
+.card__text-title {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 19.5px;
+    color: $active-color;
+
+}
+.card__text-rating {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    line-height: 13.62px;
+}
+.rating__icons {
+
+    position: relative;
+
+}
+
+.rating__icons::before {
+
+    content: "★    ★    ★    ★    ★";
+    display: block;
+    color: #EEEDF5;
+    font-size: 13px;
+
+}
+
+.rating__active {
+
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+
+.rating__active::before {
+
+    content: "★    ★    ★    ★    ★";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    color: #F2C94C;
+}
+.rating__text {
+    font-family: 'Open Sans';
+    font-size: 10px;
+    line-height: 13.62px;
+    padding-left: 6px;
+    color: $passive-color;
+
+}
+.card__text-summary {
+    padding: 16px 0;
+    font-family: 'Open Sans';
+    font-size: 10px;
+    line-height: 13.62px;
+    color: $passive-color;
+
+
+}
+.card__text-summary p{
+   
+    -webkit-line-clamp: 3; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+
+}
+.card__text-price {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    line-height: 15.85px;
+    color: $active-color;
+    padding-bottom: 16px;
+
+}
+.card__text-btn {
+    width: 100%;
+    height: 45px;
+    color: #4C3DB2;
+    border: 1px solid #4C3DB2;
+
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 10px;
+
+    text-transform: uppercase;
+
+}
+
+
+.in-the-cart {
+    color: $passive-color;
+    border: 1px solid #EEEDF5;
+}
+
+.loadMore {
+    grid-column: 3/5;
+    grid-row: 4/5;
+    width: 176px;
+    height: 45px;
+    justify-self: center;
+    margin-top: 96px;
+    font-family: 'Montserrat';
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 9.75px;
+    text-transform: uppercase;
+    color: #4C3DB2;
+    border: 1px solid #4C3DB2;
+
+}
+
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    .bookshop {
+        
+        grid-template-columns: 80px 196px 60px 1fr 80px;
+        grid-template-rows: 46px 1fr 1fr 120px;
+      
+    }
+ 
+    .bg {
+        
+        grid-template-columns: 80px 196px 60px;
+     
+    }
+    .output {
+        
+        column-gap: 40px;
+        row-gap: 70px;
+    }
+
+  }
+
+  @media (max-width: 1023px) {
+    .bookshop {
+        
+        grid-template-columns: 50px 120px 40px 1fr 50px;
+        grid-template-rows: 46px 1fr 1fr 60px;
+        margin-bottom: 40px;
+    }
+
+    .bg {
+        display: grid;
+        grid-template-columns: 50px 120px 40px;
+        grid-template-rows: 46px 1fr 60px;
+        grid-column: 1/4;
+        grid-row: 1/3;
+    
+    }
+    .category {
+        grid-column: 2/3;
+        grid-row: 2/auto;
+    }
+    .category__item {
+     
+        padding-bottom: 1em;
+        padding-right: 5px;
+      
+    }
+    
+    
+    .activeItem {
+        font-size: 15px;
+        line-height: 17px;
+        
+    }
+    
+    
+    .output {
+
+        grid-column: 3/5;
+        grid-row: 2/4;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 340px);
+        grid-template-rows: repeat(auto-fill, 240px);
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+
+    .card__cover img {
+        width: 170px;
+        height: 240px;
+        box-shadow: 0px 12px 18px 0px #35315447;
+    
+    }
+    .card__text {
+        flex: 0 0 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+    .card__text-author {
+   
+        font-size: 10px;
+        line-height: 13.62px;
+    
+    }
+    .card__text-title {
+    font-size: 12px;
+    line-height: 13px;
+
+    
+    }
+    .card__text-rating {
+    
+        font-size: 10px;
+        line-height: 11px;
+    }
+
+    .rating__icons::before {
+
+        content: "★ ★ ★ ★ ★";
+ 
+        font-size: 10px;
+    
+    }
+
+    
+    .rating__active::before {
+    
+        content: "★ ★ ★ ★ ★";
+
+        font-size: 10px;
+   
+    }
+
+   
+    
+    .rating__text {
+    
+        font-size: 10px;
+        line-height: 11px;
+        padding-left: 5px;
+    
+    
+    }
+    .card__text-summary {
+        padding: 10px 0;
+        font-size: 10px;
+        line-height: 11px;
+
+    }
+
+    .card__text-price {
+   
+        font-size: 10px;
+        line-height: 12px;
+        padding-bottom: 10px;
+    
+    }
+    .card__text-btn {
+
+        height: 30px;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 10px;
+ 
+    }
+    
+    
+    .loadMore {
+        grid-column: 3/5;
+        grid-row: 4/5;
+        width: 176px;
+        height: 45px;
+        margin-top: 96px;        
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 9.75px;
+        
+    }
+  }
